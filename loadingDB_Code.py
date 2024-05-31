@@ -15,8 +15,8 @@ def connect_to_db():
         connection = mysql.connector.connect(
             host='localhost',
             database='localFile',
-            user='root',  # Replace with your MySQL username
-            password='Matin@735'  # Replace with your MySQL password
+            user='root',  
+            password=''
         )
         if connection.is_connected():
             return connection
