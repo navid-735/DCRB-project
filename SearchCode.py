@@ -9,7 +9,7 @@ def connect_to_db():
             host='localhost',
             database='localFile',
             user='root',  
-            password=''  # Replace with your MySQL password
+            password='' 
         )
         if connection.is_connected():
             print("Connected to MySQL database")
@@ -67,11 +67,13 @@ def main():
             headers = ["File Path", "File Name", "File Type", "Match Type", "Occurrences"]
             formatted_results = []
             for row in results:
-                file_name = os.path.splitext(row[1])[0]  # Exclude file extension from file name
+                file_name = os.path.splitext(row[1])[0]  
                 formatted_results.append([
                     row[0], file_name, row[2], row[3], int(row[4]) if row[3] == 'file_content' else ''
                 ])
             print(tabulate(formatted_results, headers, tablefmt="grid"))
+
+
 
 if __name__ == "__main__":
     main()
